@@ -19,7 +19,7 @@ do
         Console.WriteLine("4 - Divisão");
         Console.WriteLine("5 - Sair");
         op = int.Parse(Console.ReadLine());
-    } while (op < 1 && op >5);
+    } while (op < 1 || op >5);
 
     Console.WriteLine("Digite o valor do primeiro numero:");
     n1 = decimal.Parse(Console.ReadLine());
@@ -88,36 +88,26 @@ do
             control = true;
         }
     }
-    
-    if (op != 5)
+
+
+    switch (op)
     {
-        if (op == 1)
-        {
+        case 1:
             resultado = n1 + n2 + n3 + n4;
-            Console.WriteLine("Soma: " + resultado);
-        }
-        else
-        {
-            if (op == 2)
-            {
-                resultado = n1 - n2 - n3 - n4;
-                Console.WriteLine($"Subtração: {resultado}");
-            }
-            else
-            {
-                if (op == 3)
-                {
-                    resultado = n1 * n2 * n3 * n4;
-                    Console.WriteLine("Multiplicação: " + resultado);
-                }
-                else
-                {
-                    resultado = n1 / n2 / n3 / n4 ;
-                    Console.WriteLine($"Divisão: {resultado} ");
-                }   
-            }
-        }   
+            break;
+        case 2:
+            resultado = n1 - n2 - n3 - n4;
+        break;
+        case 3:
+            resultado = n1 * n2 * n3 * n4;
+         break ;
+        case 4:
+            resultado = n1 / n2 / n3 / n4;
+         break;
+        default:
+            break;
     }
 
+    Console.WriteLine($"Resultado: {resultado} ");
 
 } while (op != 5);
